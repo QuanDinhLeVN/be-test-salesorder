@@ -1,0 +1,40 @@
+{
+  "name": "nailzy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-nodemon": "./node_modules/nodemon/bin/nodemon.js",
+    "format": "eslint \"src/**/*.ts\" --fix",
+    "copy-env-files": "copyfiles ./.env.* dist/",
+    "copy-resources": "copyfiles ./resources/*/* dist/",
+    "build": "rimraf dist && tsc && npm run-script copy-env-files && npm run-script copy-resources",
+    "start-server-api": "node dist/src/bin/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv-safe": "^9.1.0",
+    "express": "^4.21.1",
+    "helmet": "^8.0.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.7.2",
+    "mongoose-lean-virtuals": "^1.0.0",
+    "redis": "^4.7.0",
+    "stringy": "^0.1.0",
+    "winston": "^3.15.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/dotenv-safe": "^8.1.6",
+    "@types/express": "^5.0.0",
+    "@types/lodash": "^4.17.12",
+    "@types/node": "^22.7.9",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
